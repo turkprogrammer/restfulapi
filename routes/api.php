@@ -19,10 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('country', [CountryController::class, 'country'] );
-Route::get('country/{id}', [CountryController::class, 'countryById'] );
-Route::post('country', [CountryController::class, 'countrySave'] );
-Route::put('country/{country}', [CountryController::class, 'countryEdit'] );
-Route::delete('country/{country}', [CountryController::class, 'countryDelete'] );
-
-
+Route::get('country', [CountryController::class, 'country']);
+Route::get('country/{id}', [CountryController::class, 'countryById']);
+Route::post('country', [CountryController::class, 'countrySave']);
+Route::put('country/{country}', [CountryController::class, 'countryEdit']);
+Route::delete('country/{country}', [CountryController::class, 'countryDelete']);
