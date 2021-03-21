@@ -26,3 +26,4 @@ Route::post('country', [CountryController::class, 'countrySave']);
 Route::put('country/{country}', [CountryController::class, 'countryEdit']);
 Route::delete('country/{country}', [CountryController::class, 'countryDelete']);
 Route::post('login', [LoginController::class, 'login']);
+Route::get('refresh', [LoginController::class, 'refresh']);
