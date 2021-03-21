@@ -22,8 +22,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('country', [CountryController::class, 'country']);
 Route::get('country/{id}', [CountryController::class, 'countryById']);
+
+Route::post('login', [LoginController::class, 'login']);
+
+
+Route::group(['middleware'=>['jwt.verify']], function(){
+    //Route::get('country', [CountryController::class, 'country']);
 Route::post('country', [CountryController::class, 'countrySave']);
 Route::put('country/{country}', [CountryController::class, 'countryEdit']);
 Route::delete('country/{country}', [CountryController::class, 'countryDelete']);
-Route::post('login', [LoginController::class, 'login']);
 Route::get('refresh', [LoginController::class, 'refresh']);
+});
